@@ -227,4 +227,59 @@ document.querySelector(".favorite-link").addEventListener("click", event => {
     document.getElementById("coches").scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
+document.getElementById("contactForm").addEventListener("submit", event => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const serviceId = document.querySelector('meta[name="emailjs-service-id"]').content.trim();
+    const templateId = document.querySelector('meta[name="emailjs-template-id"]').content.trim();
+    const publicKey = document.querySelector('meta[name="emailjs-public-key"]').content.trim();
+    const submitButton = form.querySelector('[type="submit"]');
+
+    if (formData.get("website")) {
+        form.reset();
+        return;
+    }
+
+    if (!serviceId || !templateId || !publicKey) {
+        showToast("El envío aún no está configurado en EmailJS.");
+        return;
+    }
+
+    submitButton.disabled = true;
+    submitButton.setAttribute("aria-busy", "true");
+
+    fetch("https://api.emailjs.com/api/v1.0/email/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            service_id: serviceId,
+            template_id: templateId,
+            user_id: publicKey,
+            template_params: {
+                name: formData.get("name"),
+                email: formData.get("email"),
+                phone: formData.get("phone") || "No indicado",
+                message: formData.get("message")
+            }
+        })
+    })
+        .then(async response => {
+            const result = await response.text();
+            if (!response.ok) {
+                throw new Error(result || "No se pudo enviar la consulta.");
+            }
+            form.reset();
+            showToast("Consulta enviada. Gracias por contactar con Ruta Motor.");
+        })
+        .catch(error => {
+            console.error("No se pudo enviar el formulario de contacto:", error);
+            showToast(error.message || "No se pudo enviar la consulta. Inténtalo de nuevo.");
+        })
+        .finally(() => {
+            submitButton.disabled = false;
+            submitButton.removeAttribute("aria-busy");
+        });
+});
+
 renderCars();

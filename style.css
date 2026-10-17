@@ -141,6 +141,28 @@ h2 { margin-bottom: 7px; font: 700 clamp(27px, 3vw, 35px)/1.2 Manrope, sans-seri
 .promise-icon svg { width: 18px; height: 18px; }
 .promise-item strong { display: block; margin: 2px 0 5px; font: 700 12px Manrope, sans-serif; }
 .promise-item p { margin: 0; color: #717a72; font-size: 10px; line-height: 1.55; }
+.contact-section { padding: 76px 0; background: var(--paper); }
+.contact-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 70px; align-items: start; }
+.contact-intro { padding-top: 12px; }
+.contact-intro .eyebrow { margin-bottom: 12px; }
+.contact-intro h2 { max-width: 350px; margin-bottom: 12px; }
+.contact-intro > p:not(.eyebrow) { max-width: 340px; margin-bottom: 25px; color: var(--muted); font-size: 14px; line-height: 1.65; }
+.contact-detail { display: grid; justify-items: start; gap: 10px; color: var(--green); font-size: 13px; font-weight: 700; }
+.contact-form { padding: 26px; border: 1px solid var(--line); border-radius: 12px; background: var(--white); box-shadow: var(--shadow); }
+.contact-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 17px 14px; }
+.contact-field { display: grid; gap: 7px; }
+.contact-field-full { grid-column: 1 / -1; }
+.contact-field label { color: #555d57; font-size: 11px; font-weight: 700; }
+.contact-field label span { color: var(--muted); font-weight: 400; }
+.contact-field input, .contact-field textarea { width: 100%; padding: 11px 12px; border: 1px solid #e2e5df; border-radius: 7px; outline: none; background: #fff; color: var(--ink); font-size: 13px; }
+.contact-field input { height: 43px; }
+.contact-field textarea { min-height: 110px; resize: vertical; line-height: 1.5; }
+.contact-field input:focus, .contact-field textarea:focus { border-color: #7b9b84; box-shadow: 0 0 0 3px rgba(49, 93, 67, .1); }
+.contact-consent { display: flex; align-items: flex-start; gap: 9px; margin-top: 16px; color: #555d57; font-size: 11px; line-height: 1.5; cursor: pointer; }
+.contact-consent input { width: 15px; height: 15px; flex: 0 0 15px; margin: 1px 0 0; accent-color: var(--green); }
+.contact-honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.contact-submit { margin-top: 18px; }
+.contact-note { margin: 12px 0 0; color: var(--muted); font-size: 10px; line-height: 1.55; }
 .footer { padding: 28px 0; background: #19251d; color: #e8eee9; }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
 .footer .brand { font-size: 17px; }
@@ -170,6 +192,9 @@ h2 { margin-bottom: 7px; font: 700 clamp(27px, 3vw, 35px)/1.2 Manrope, sans-seri
     .car-grid { grid-template-columns: repeat(2, 1fr); }
     .promise-grid { grid-template-columns: repeat(2, 1fr); }
     .promise-intro h2 { max-width: none; }
+    .contact-layout { grid-template-columns: 1fr; gap: 28px; }
+    .contact-intro { padding-top: 0; }
+    .contact-section { padding: 58px 0; }
 }
 @media (max-width: 620px) {
     .shell { width: calc(100% - 36px); }
@@ -208,6 +233,9 @@ h2 { margin-bottom: 7px; font: 700 clamp(27px, 3vw, 35px)/1.2 Manrope, sans-seri
     .promise-icon { width: 33px; height: 33px; flex-basis: 33px; }
     .promise-item strong { font-size: 11px; }
     .promise-item p { font-size: 9px; }
+    .contact-form { padding: 19px; }
+    .contact-fields { grid-template-columns: 1fr; }
+    .contact-field-full { grid-column: auto; }
     .footer-inner { align-items: flex-start; flex-wrap: wrap; }
     .footer-note { order: 3; width: 100%; }
     .footer-links { gap: 13px; }

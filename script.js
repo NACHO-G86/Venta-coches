@@ -1,14 +1,69 @@
 const cars = [
-    { id: 1, brand: "Audi", model: "A3 Sportback", version: "35 TFSI S line", price: 26900, year: 2022, km: 28400, fuel: "Gasolina", transmission: "Automático", image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1000&q=82", badge: "Selección Ruta", description: "Compacto premium con acabado S line, cambio automático y un interior cuidado al detalle. Ideal para disfrutar tanto en ciudad como en carretera." },
-    { id: 2, brand: "BMW", model: "Serie 1", version: "118i M Sport", price: 24900, year: 2021, km: 35600, fuel: "Gasolina", transmission: "Automático", image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1000&q=82", badge: "Muy equipado", description: "Diseño deportivo y una conducción ágil que hace especial cada trayecto. Con paquete M Sport y conectividad completa." },
-    { id: 3, brand: "Mercedes-Benz", model: "Clase A", version: "A 180 Progressive", price: 28900, year: 2023, km: 19200, fuel: "Gasolina", transmission: "Automático", image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1000&q=82", badge: "Pocos kilómetros", description: "Elegancia, tecnología y confort en un compacto muy completo. Unidad reciente con historial de mantenimiento verificado." },
-    { id: 4, brand: "Toyota", model: "C-HR", version: "1.8 Hybrid Advance", price: 23900, year: 2022, km: 31500, fuel: "Híbrido", transmission: "Automático", image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=1000&q=82", badge: "Etiqueta ECO", description: "SUV híbrido, cómodo y eficiente. Su etiqueta ECO y su amplio equipamiento lo convierten en el compañero perfecto para cada día." },
-    { id: 5, brand: "Volkswagen", model: "Golf", version: "Life 1.5 eTSI", price: 21900, year: 2021, km: 42800, fuel: "Gasolina", transmission: "Automático", image: "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1000&q=82", badge: "Gran oportunidad", description: "El equilibrio perfecto: versátil, cómodo y con tecnología mild hybrid. Revisado y listo para salir a la carretera." },
-    { id: 6, brand: "Tesla", model: "Model 3", version: "Standard Range Plus", price: 29900, year: 2022, km: 24800, fuel: "Eléctrico", transmission: "Automático", image: "https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?auto=format&fit=crop&w=1000&q=82", badge: "Cero emisiones", description: "Da el salto a la movilidad eléctrica con autonomía para tu día a día, tecnología intuitiva y una experiencia de conducción única." },
-    { id: 7, brand: "SEAT", model: "León", version: "1.5 TSI FR", price: 18900, year: 2020, km: 51700, fuel: "Gasolina", transmission: "Manual", image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1000&q=82", badge: "Deportivo y ágil", description: "Un compacto con carácter, amplio por dentro y divertido al volante. Acabado FR con un gran nivel de equipamiento." },
-    { id: 8, brand: "Volvo", model: "XC40", version: "B3 Core", price: 32700, year: 2023, km: 16800, fuel: "Híbrido", transmission: "Automático", image: "https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?auto=format&fit=crop&w=1000&q=82", badge: "Como nuevo", description: "SUV escandinavo con diseño limpio, gran seguridad y el espacio que necesitas. Una unidad prácticamente nueva." },
-    { id: 9, brand: "Peugeot", model: "e-208", version: "Allure 50 kWh", price: 20900, year: 2022, km: 22100, fuel: "Eléctrico", transmission: "Automático", image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=82", badge: "Etiqueta CERO", description: "Ágil, silencioso y totalmente eléctrico. El aliado perfecto para moverte por la ciudad con estilo y sin emisiones." }
+    { id: 1, brand: "Audi", model: "A3 Sportback", version: "35 TFSI S line", price: 26900, year: 2022, km: 28400, fuel: "Gasolina", transmission: "Automático", image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1000&q=82", badge: "Selección Ruta", description: "Acabado S line, cambio automático e interior cuidado. Cómodo en ciudad y carretera." },
+    { id: 2, brand: "BMW", model: "Serie 1", version: "118i M Sport", price: 24900, year: 2021, km: 35600, fuel: "Gasolina", transmission: "Automático", image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1000&q=82", badge: "Muy equipado", description: "Deportivo y ágil, con paquete M Sport y conectividad completa." },
+    { id: 3, brand: "Mercedes-Benz", model: "Clase A", version: "A 180 Progressive", price: 28900, year: 2023, km: 19200, fuel: "Gasolina", transmission: "Automático", image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1000&q=82", badge: "Pocos kilómetros", description: "Compacto cómodo y tecnológico. Historial de mantenimiento verificado." },
+    { id: 4, brand: "Toyota", model: "C-HR", version: "1.8 Hybrid Advance", price: 23900, year: 2022, km: 31500, fuel: "Híbrido", transmission: "Automático", image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=1000&q=82", badge: "Etiqueta ECO", description: "SUV híbrido y eficiente, con etiqueta ECO y amplio equipamiento." },
+    { id: 5, brand: "Volkswagen", model: "Golf", version: "Life 1.5 eTSI", price: 21900, year: 2021, km: 42800, fuel: "Gasolina", transmission: "Automático", image: "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1000&q=82", badge: "Gran oportunidad", description: "Versátil y cómodo, con tecnología mild hybrid. Revisado y listo para conducir." },
+    { id: 6, brand: "Tesla", model: "Model 3", version: "Standard Range Plus", price: 29900, year: 2022, km: 24800, fuel: "Eléctrico", transmission: "Automático", image: "https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?auto=format&fit=crop&w=1000&q=82", badge: "Cero emisiones", description: "Eléctrico, con buena autonomía y tecnología intuitiva." },
+    { id: 7, brand: "SEAT", model: "León", version: "1.5 TSI FR", price: 18900, year: 2020, km: 51700, fuel: "Gasolina", transmission: "Manual", image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1000&q=82", badge: "Deportivo y ágil", description: "Compacto amplio y ágil, con acabado FR y buen equipamiento." },
+    { id: 8, brand: "Volvo", model: "XC40", version: "B3 Core", price: 32700, year: 2023, km: 16800, fuel: "Híbrido", transmission: "Automático", image: "https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?auto=format&fit=crop&w=1000&q=82", badge: "Como nuevo", description: "SUV amplio y seguro, con diseño limpio. Casi nuevo." },
+    { id: 9, brand: "Peugeot", model: "e-208", version: "Allure 50 kWh", price: 20900, year: 2022, km: 22100, fuel: "Eléctrico", transmission: "Automático", image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=82", badge: "Etiqueta CERO", description: "Eléctrico, ágil y silencioso. Ideal para la ciudad." }
 ];
+
+const additionalVehicleModels = [
+    { brand: "Abarth", basePrice: 16900, models: [["500e", "Eléctrico"], ["595", "Gasolina"], ["695", "Gasolina"], ["124 Spider", "Gasolina"]] },
+    { brand: "Alfa Romeo", basePrice: 21900, models: [["Junior", "Híbrido"], ["Giulia", "Gasolina"], ["Stelvio", "Diésel"], ["Tonale", "Híbrido"]] },
+    { brand: "Aston Martin", basePrice: 79900, models: [["Vantage", "Gasolina"], ["DB11", "Gasolina"], ["DBX", "Gasolina"], ["DB12", "Gasolina"]] },
+    { brand: "Bentley", basePrice: 99900, models: [["Continental GT", "Gasolina"], ["Bentayga", "Híbrido"], ["Flying Spur", "Gasolina"], ["Continental GTC", "Gasolina"]] },
+    { brand: "BYD", basePrice: 18900, models: [["Dolphin", "Eléctrico"], ["Atto 3", "Eléctrico"], ["Seal", "Eléctrico"], ["Seal U", "Híbrido"]] },
+    { brand: "Citroën", basePrice: 14900, models: [["C3", "Gasolina"], ["C4", "Híbrido"], ["C5 Aircross", "Híbrido"], ["ë-C4", "Eléctrico"]] },
+    { brand: "CUPRA", basePrice: 22900, models: [["Formentor", "Híbrido"], ["León", "Híbrido"], ["Born", "Eléctrico"], ["Ateca", "Gasolina"]] },
+    { brand: "Dacia", basePrice: 11900, models: [["Sandero", "Gasolina"], ["Duster", "Híbrido"], ["Jogger", "Híbrido"], ["Spring", "Eléctrico"]] },
+    { brand: "DS Automobiles", basePrice: 19900, models: [["DS 3", "Híbrido"], ["DS 4", "Híbrido"], ["DS 7", "Híbrido"], ["DS 9", "Híbrido"]] },
+    { brand: "Fiat", basePrice: 12900, models: [["500", "Híbrido"], ["Panda", "Gasolina"], ["Tipo", "Gasolina"], ["600e", "Eléctrico"]] },
+    { brand: "Ford", basePrice: 15900, models: [["Puma", "Híbrido"], ["Kuga", "Híbrido"], ["Focus", "Gasolina"], ["Mustang Mach-E", "Eléctrico"]] },
+    { brand: "Honda", basePrice: 17900, models: [["Civic", "Híbrido"], ["HR-V", "Híbrido"], ["CR-V", "Híbrido"], ["Jazz", "Híbrido"]] },
+    { brand: "Hyundai", basePrice: 15900, models: [["Kona", "Híbrido"], ["Tucson", "Híbrido"], ["i20", "Gasolina"], ["IONIQ 5", "Eléctrico"]] },
+    { brand: "Jaguar", basePrice: 25900, models: [["F-PACE", "Gasolina"], ["E-PACE", "Diésel"], ["XE", "Gasolina"], ["I-PACE", "Eléctrico"]] },
+    { brand: "Jeep", basePrice: 19900, models: [["Avenger", "Eléctrico"], ["Renegade", "Híbrido"], ["Compass", "Híbrido"], ["Wrangler", "Gasolina"]] },
+    { brand: "Kia", basePrice: 16900, models: [["Niro", "Híbrido"], ["Sportage", "Híbrido"], ["Ceed", "Gasolina"], ["EV6", "Eléctrico"]] },
+    { brand: "Land Rover", basePrice: 29900, models: [["Discovery Sport", "Diésel"], ["Defender", "Diésel"], ["Range Rover Evoque", "Híbrido"], ["Range Rover Velar", "Diésel"]] },
+    { brand: "Lexus", basePrice: 25900, models: [["LBX", "Híbrido"], ["UX", "Híbrido"], ["NX", "Híbrido"], ["RX", "Híbrido"]] },
+    { brand: "Mazda", basePrice: 16900, models: [["CX-30", "Gasolina"], ["Mazda3", "Gasolina"], ["CX-5", "Diésel"], ["MX-5", "Gasolina"]] },
+    { brand: "MINI", basePrice: 17900, models: [["Cooper", "Gasolina"], ["Countryman", "Híbrido"], ["Aceman", "Eléctrico"], ["Clubman", "Gasolina"]] },
+    { brand: "Mitsubishi", basePrice: 15900, models: [["ASX", "Híbrido"], ["Eclipse Cross", "Híbrido"], ["Outlander", "Híbrido"], ["Colt", "Gasolina"]] },
+    { brand: "Nissan", basePrice: 14900, models: [["Juke", "Híbrido"], ["Qashqai", "Híbrido"], ["X-Trail", "Híbrido"], ["Ariya", "Eléctrico"]] },
+    { brand: "Opel", basePrice: 13900, models: [["Corsa", "Gasolina"], ["Mokka", "Eléctrico"], ["Astra", "Híbrido"], ["Grandland", "Híbrido"]] },
+    { brand: "Renault", basePrice: 12900, models: [["Clio", "Híbrido"], ["Captur", "Híbrido"], ["Austral", "Híbrido"], ["Mégane E-Tech", "Eléctrico"]] },
+    { brand: "Škoda", basePrice: 14900, models: [["Fabia", "Gasolina"], ["Kamiq", "Gasolina"], ["Karoq", "Diésel"], ["Enyaq", "Eléctrico"]] }
+];
+
+const stockImages = cars.map(car => car.image);
+additionalVehicleModels.forEach((group, brandIndex) => {
+    group.models.forEach(([model, fuel], modelIndex) => {
+        const id = cars.length + 1;
+        const year = 2019 + ((brandIndex + modelIndex) % 6);
+        const km = 12000 + ((brandIndex * 7919 + modelIndex * 6421) % 68000);
+        const transmission = fuel === "Eléctrico" || fuel === "Híbrido" || (brandIndex + modelIndex) % 2 === 0
+            ? "Automático"
+            : "Manual";
+
+        cars.push({
+            id,
+            brand: group.brand,
+            model,
+            version: "Ocasión",
+            price: group.basePrice + modelIndex * 3500,
+            year,
+            km,
+            fuel,
+            transmission,
+            image: stockImages[(brandIndex * group.models.length + modelIndex) % stockImages.length],
+            badge: fuel === "Eléctrico" ? "Eléctrico" : fuel === "Híbrido" ? "Etiqueta ECO" : "Ocasión revisada",
+            description: `${model} de ${year}, con motor ${fuel.toLocaleLowerCase("es")} y ${km.toLocaleString("es-ES")} km.`
+        });
+    });
+});
 
 const favoriteIds = new Set();
 const searchInput = document.getElementById("searchInput");
